@@ -1,0 +1,16 @@
+sf_*.pdf
+*.aux
+*.log
+*.out
+*.gz
+*.xml
+*.bbl
+*.bbl-*
+*.bcf
+*.blg
+*.lof
+*.lol
+*.lot
+*.toc
+*-converted-to.pdf
+*.synctex(busy)

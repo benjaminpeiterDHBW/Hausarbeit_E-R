@@ -1,0 +1,75 @@
+\documentclass[ngerman,
+                12pt,
+                a4paper,
+                oneside,
+                bibliography=totoc,
+                listof=totoc]{scrartcl}
+
+% Helper
+\input{tex_packages.tex}
+\input{tex_Environment.tex}
+\input{tex_Colors.tex}
+
+% Variables#
+\usepackage[onehalfspacing]{setspace}
+\usepackage{uarial}
+\renewcommand{\familydefault}{\sfdefault}
+
+\newcommand{\thesisauthor}{Benjamin Peiter}
+\newcommand{\thesiscourse}{TIK24}
+\newcommand{\thesisstudy}{Informatik}
+
+\newcommand{\thesistype}{Hausarbeit}
+\newcommand{\thesistitle}{Hausarbeit Ethik und Recht}
+\newcommand{\thesisdate}{24.10.2025}
+\newcommand{\thesiduration}{2 Wochen}
+\newcommand{\thesiscompany}{ZF Active Safety GmbH, Koblenz}
+
+%\newcommand{\thesisadvisorI}{M. Eng. GhostCuber69}
+%\newcommand{\thesisadvisorII}{M. Eng. GhostCuber70}         % Auskommentieren falls es nur einen Betreuer gibt
+\newcommand{\thesisprof}{Herr Volker Seiring}
+
+
+% \renewcaptionname{ngerman}{\contentsname}{Inhalt}           % statt Inhaltsverzeichnis
+% \renewcaptionname{ngerman}{\listfigurename}{Abbildungen}    % statt Abbildungsverzeichnis
+% \renewcaptionname{ngerman}{\listtablename}{Tabellen}        % statt Tabellenverzeichnis
+% \renewcommand*{\lstlistlistingname}{Quellcode}              % statt Quellcodeverzeichnis
+% Abkürzungsverzeichnis in sf_Abkuerzungsverzeichnis.tex
+\renewcaptionname{ngerman}{\refname}{Literaturverzeichnis}  % statt Literatur
+
+
+\input{tex_pdf_properties.tex}
+
+% No paragraph ident, but paragraph seperation
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{1mm}
+
+
+\addbibresource{quellen.bib}
+\DeclareCiteCommand{\footcite}[\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {\printnames{author},\space\printfield{title},\space\printfield{year}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\begin{document}
+    \pagenumbering{gobble}
+    \input{tex_Header_title.tex}
+    \subfile{sf_Titelseite.tex}
+    \input{tex_Header_normal.tex}
+    \subfile{sf_Erklaerung.tex}
+    \clearpage
+    \tableofcontents
+    \clearpage
+    \pagenumbering{Roman}
+    \clearpage
+    \subfile{sf_Abkuerzungsverzeichnis.tex}
+
+    \pagenumbering{arabic}
+    \subfile{sf_Einleitung.tex}
+    \subfile{sf_main.tex}
+
+    \clearpage
+    \printbibliography
+
+\end{document}

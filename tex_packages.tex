@@ -1,0 +1,86 @@
+
+\usepackage{geometry}
+\setlength{\footheight}{14mm}
+\geometry{a4paper,
+          left=25mm,
+          right=25mm,
+          marginparwidth=1mm,
+          top=25mm,
+          headheight=25mm,
+          headsep=2mm,
+          bottom=25mm,
+          footskip=14mm}
+% TOP = UpperBorder + headheight + headsep
+% BOTTOM = LowerBorder + footskip
+
+% \usepackage[labelfont=footnotesize, textfont=it]{caption}
+% \usepackage[font={footnotesize, it}]{caption}
+\usepackage[font=footnotesize]{caption}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+% \usepackage{lastpage}
+\usepackage{booktabs}
+\usepackage{float} % to use [H]
+\usepackage[export]{adjustbox}
+\usepackage{xcolor}
+\usepackage{colortbl}   % to color tables     [\cellcolor{color}]
+\usepackage{nameref}    % to ref by name      [\nameref{label}]
+\usepackage[ngerman]{babel}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{subfiles}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{soul}       % to highlight text   [\hl{text}] \hig
+\usepackage{lipsum}
+\usepackage{lmodern}    % LatinModern
+\usepackage[printonlyused, smaller, withpage]{acronym}
+\usepackage[backend=biber, style=ieee]{biblatex}
+
+\sethlcolor{red}
+
+% \usepackage{amssymb}
+\usepackage{pifont}
+
+% For Header and Footer
+% \usepackage[headsepline, footsepline]{scrlayer-scrpage}
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+
+% For links in pdf
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks    = true,
+  linkcolor     = zf_blue,
+  filecolor     = red,
+  urlcolor      = zf_blue,
+  citecolor     = brown,
+  anchorcolor   = green,
+  pdftitle      = {Test},
+  hypertexnames = false, % Fix for right appendix listing ref
+  }
+
+% For snippets
+\usepackage{listings}
+% For CCode snippets
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=single,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{snippet_blue},
+  commentstyle=\itshape\color{snippet_green},
+  identifierstyle=\color{black},
+  stringstyle=\color{snippet_red},
+  captionpos=b,
+}
+% Set as standard listing
+\lstset{escapechar=@,style=customc}
+
+% \usepackage{showframe}

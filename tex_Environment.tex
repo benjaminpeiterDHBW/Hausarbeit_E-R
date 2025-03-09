@@ -1,0 +1,99 @@
+
+% Short
+\newcommand{\cmark}{\ding{51}}    % pifont
+\newcommand{\xmark}{\ding{56}}    % pifont
+\newcommand{\unit}[1]{$\mathrm{#1}$}
+\newcommand{\mue}{$\mu$}
+\newcommand{\XXX}{\hl{XXX}}
+\newcommand{\leadingzero}[1]{\ifnum #1<10 0\the#1\else\the#1\fi}
+\newcommand{\todaygerman}{\leadingzero{\day}.\leadingzero{\month}.\the\year}
+
+%% Table
+\newcommand{\mytoprule}{\specialrule{0.5mm}{0mm}{0mm}}
+\newcommand{\tabh}  [1]{\multicolumn{1}{c}    {\textbf{#1}}}
+\newcommand{\tabhr} [1]{\multicolumn{1}{c|}   {\textbf{#1}}}
+\newcommand{\tabhl} [1]{\multicolumn{1}{|c}   {\textbf{#1}}}
+\newcommand{\tabhc} [1]{\multicolumn{1}{|c|}  {\textbf{#1}}}
+% \newcommand{\cellok}  {\cellcolor{table_green}  \cmark}
+% \newcommand{\cellnok} {\cellcolor{table_red}    \xmark}
+\newcommand{\cellok}  {\textcolor{table_green}  {\cmark}}
+\newcommand{\cellnok} {\textcolor{table_red}    {\xmark}}
+\setlength\doublerulesep{2mm} % space between 2 \hline
+% \mytable{Columns}{Caption}{Label}{Table}
+\newcommand{\mytable}[5][tab]{%
+  \begin{table}[H]
+    \centering
+    \footnotesize
+    \setlength\extrarowheight{2pt}
+    \begin{tabular}{#2}
+      #5
+    \end{tabular}
+    \vspace{-2mm}
+    \caption{#3}
+    \label{#1:#4}
+  \end{table}   }
+% \mylongtable{Columns}{Caption}{Label}{Table}
+\newcommand{\mylongtable}[5][tab]{%
+  \begin{center}
+    \footnotesize
+    % \small
+    \setlength\extrarowheight{2pt}
+    \begin{longtable}[H]{#2}
+      #5
+    % \vspace{-2mm}
+    \caption{#3}
+    \label{#1:#4}
+    \end{longtable}
+  \end{center}   }
+
+%% Figure
+\setlength{\fboxrule}{1pt}
+% \myfigure{figure.eps}{Caption}{Label}{Width}
+\setlength{\fboxsep}{2mm}
+\newcommand{\myfigure}[5][fig]{%
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=#5, fbox]{figures/#2}
+    \vspace{-2mm}
+    \caption{#3}
+    \label{#1:#4}
+  \end{figure}  }
+
+%% Table - Appendix
+% \mytable{Columns}{Caption}{Label}{Table}
+\newcounter{appendixcounter}
+\newcounter{oldtable}
+\newcommand{\mytableappendix}[4]{%
+  \renewcommand{\tablename}{Appendix}
+  \setcounter{oldtable}{\value{table}}
+  \setcounter{table}{\value{appendixcounter}}
+  \mytable[app]{#1}{#2}{#3}{#4}
+  \stepcounter{appendixcounter}
+  \setcounter{table}{\value{oldtable}}   }
+
+%% Figure - Appendix
+% \myfigure{figure.eps}{Caption}{Label}{Width}
+\newcounter{oldfigure}
+\newcommand{\myfigureappendix}[4]{%
+  \renewcommand{\figurename}{Appendix}
+  \setcounter{oldfigure}{\value{figure}}
+  \setcounter{figure}{\value{appendixcounter}}
+  \myfigure[app]{#1}{#2}{#3}{#4}
+  \stepcounter{appendixcounter}
+  \setcounter{figure}{\value{oldfigure}}  }
+
+%% Snippet
+\renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
+\renewcommand{\lstlistingname}{Quellcode}
+\newcommand{\snippetspace}{\vspace{0mm}}
+
+\newcounter{oldlisting}
+\newcommand{\mysnippetappendixbegin}{%
+  \renewcommand{\lstlistingname}{Appendix}
+  \setcounter{oldlisting}{\value{lstlisting}}
+  \setcounter{lstlisting}{\value{appendixcounter}} }
+
+\newcommand{\mysnippetappendixend}{%
+  \renewcommand{\lstlistingname}{Snippet}
+  \stepcounter{appendixcounter}
+  \setcounter{lstlisting}{\value{oldlisting}}  }

@@ -1,0 +1,36 @@
+\documentclass[Thesis.tex]{subfiles}
+\begin{document}
+
+\input{tex_Header_title.tex}
+
+\begingroup
+  \centering
+  \vspace*{2cm}
+  \Large
+  \textbf{\thesistitle} \\
+  \vspace*{2.5cm}
+  \normalsize
+  \thesistype \\
+  \vspace*{2.5cm}
+  des Studienganges \thesisstudy \\
+  an der Dualen Hochschule Baden-Württemberg Ravensburg\\
+  \vspace*{2.5cm}
+  von \\
+  \thesisauthor \\
+  \vspace*{2.5cm}
+  \thesisdate \\
+  \vfill
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular*}{\textwidth}{@{}lp{1.5cm}l@{}}
+    Bearbeitungszeit        & & \thesiduration\\
+    Kurs                    & & \thesiscourse\\
+    Dualer Partner          & & \thesiscompany\\
+    Gutachter der Dualen Hochschule   & & \thesisprof\\
+    \end{tabular*} \\
+  \normalsize
+  % Datum, Unterschrift: \underline{\hspace{10cm}}
+\endgroup
+
+\clearpage
+
+\end{document}
