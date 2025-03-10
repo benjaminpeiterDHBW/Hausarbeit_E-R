@@ -51,6 +51,19 @@
   {\printnames{author},\space\printfield{title},\space\printfield{year}}
   {\multicitedelim}
   {\usebibmacro{postnote}}
+  \newcommand{\myfootcite}[1]{%
+  \ifcsundef{myfn@#1}{% Falls die Quelle noch nicht zitiert wurde:
+    \footcite{#1}% – Fußnote mit voller Angabe erzeugen
+    \global\expandafter\def\csname myfn@#1\endcsname{\the\value{footnote}}% Fußnotennummer speichern
+  }{%
+    \ifnum\csname myfn@#1\endcsname=\the\value{footnote}%
+      \footnotemark[\csname myfn@#1\endcsname]% Bereits gespeicherte Fußnotennummer wiederverwenden
+    \else%
+      \footcite{#1}% – Fußnote mit voller Angabe erzeugen
+      \global\expandafter\def\csname myfn@#1\endcsname{\the\value{footnote}}% Fußnotennummer aktualisieren
+    \fi%
+  }%
+}
 
 \begin{document}
     \pagenumbering{gobble}
