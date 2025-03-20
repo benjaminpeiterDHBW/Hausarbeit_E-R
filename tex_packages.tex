@@ -1,10 +1,9 @@
-
 \usepackage{geometry}
 \setlength{\footheight}{14mm}
 \geometry{a4paper,
           left=25mm,
           right=25mm,
-          marginparwidth=1mm,
+          marginparwidth=5mm,
           top=25mm,
           headheight=25mm,
           headsep=2mm,
@@ -37,8 +36,13 @@
 \usepackage{soul}       % to highlight text   [\hl{text}] \hig
 \usepackage{lipsum}
 \usepackage{lmodern}    % LatinModern
-\usepackage[printonlyused, smaller, withpage]{acronym}
-\usepackage[backend=biber, style=ieee, giveninits=false, pagetracker=true]{biblatex}
+\usepackage[printonlyused, withpage]{acronym}
+\usepackage[style=authoryear, backend=biber, giveninits=false]{biblatex}
+\usepackage{url}
+
+%%% --- The following two lines are what needs to be added --- %%%
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
 
 \sethlcolor{red}
 
@@ -52,6 +56,7 @@
 
 % For links in pdf
 \usepackage{hyperref}
+
 \hypersetup{
   colorlinks    = true,
   linkcolor     = zf_blue,
@@ -59,8 +64,9 @@
   urlcolor      = zf_blue,
   citecolor     = brown,
   anchorcolor   = green,
-  pdftitle      = {Test},
+  pdftitle      = {Ethik und Recht Hausarbeit},
   hypertexnames = false, % Fix for right appendix listing ref
+  breaklinks    = true,  % Add this line
   }
 
 % For snippets

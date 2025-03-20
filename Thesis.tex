@@ -22,7 +22,7 @@
 \newcommand{\thesistype}{Hausarbeit}
 \newcommand{\thesistitle}{Bewertung der Chancen und Gefahren der Künstlichen Intelligenz für die Demokratie (in der Bundesrepublik Deutschland)}
 \newcommand{\thisisthema}{Inwieweit sind Entwickler von Künstlicher Intelligenz für die Verbreitung von Fake News im Gegensatz zu den Erstellern zur verantwortung zu ziehen?}
-\newcommand{\thesisdate}{24.10.2025}
+\newcommand{\thesisdate}{24.03.2025}
 \newcommand{\thesiduration}{2 Wochen}
 \newcommand{\thesiscompany}{ZF Active Safety GmbH, Koblenz}
 
@@ -36,7 +36,7 @@
 % \renewcaptionname{ngerman}{\listtablename}{Tabellen}        % statt Tabellenverzeichnis
 % \renewcommand*{\lstlistlistingname}{Quellcode}              % statt Quellcodeverzeichnis
 % Abkürzungsverzeichnis in sf_Abkuerzungsverzeichnis.tex
-\renewcaptionname{ngerman}{\refname}{Literaturverzeichnis}  % statt Literatur
+\renewcaptionname{ngerman}{\refname}{Quellenverzeichnis}  % statt Literatur
 
 
 \input{tex_pdf_properties.tex}
@@ -71,11 +71,10 @@
     \input{tex_Header_title.tex}
     \subfile{sf_Titelseite.tex}
     \input{tex_Header_normal.tex}
-    \subfile{sf_Erklaerung.tex}
-    \clearpage
     \tableofcontents
     \clearpage
     \pagenumbering{Roman}
+    \subfile{sf_Erklaerung.tex}
     \clearpage
     \subfile{sf_Abkuerzungsverzeichnis.tex}
 
